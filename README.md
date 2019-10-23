@@ -19,21 +19,26 @@ Vuetify - material design component framework
 npm install
 ```
 
-### Compiles and runs the back-end
+### To Compile and run the back-end 
 ```
 npm run serve
 ```
 
 ### To run the front-end
 
-```
-cd insta-client
 
-npm install -g @vue/cli
+```
+
+Open new terminal window
+
+
+cd insta-client 
 
 npm install
 
 npm run dev
+
+Open browser and go to: http://localhost:8080/
 
 
 ```
