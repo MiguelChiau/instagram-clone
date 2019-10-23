@@ -14,9 +14,9 @@ module.exports = {
           let token = jwt.sign({ id: user._id }, config.secret, {
             expiresIn: 86400 //expires in 24hs
           });
-          res.status(200).send({ msg: "Login was Successful", token });
+          res.status(200).send({ auth: true, token });
         } else {
-          res.status(500).send({ msg: "Passwords did not match" });
+          res.status(500).send({ auth: false, msg: "Passwords did not match" });
         }
       });
     });
