@@ -34,6 +34,7 @@
         </v-card-actions>
       </v-card>
     </v-app>
+    <div class="error_msg" v-if="hasErrors">{{error}}</div>
   </div>
 </template>
 
@@ -45,7 +46,9 @@ export default {
       email: "",
       password: "",
       // To toggle password visibility
-      showPassword: false
+      showPassword: false,
+      hasErrors: false,
+      error: ""
     };
   },
 
@@ -75,11 +78,17 @@ export default {
             this.$router.push("/");
             console.log(this.$router);
           } else {
-            alert("There was an error");
+            alert("The password is not correct");
+            this.error = response.data.msg;
+            this.hasErrors = true;
+
+            // console.log("Error", response.data.msg);
           }
         })
         .catch(err => {
           console.log(err);
+          this.error = err;
+          this.hasErrors = true;
         });
     }
   }

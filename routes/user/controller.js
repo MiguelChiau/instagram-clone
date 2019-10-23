@@ -5,8 +5,16 @@ const config = require("../../config");
 module.exports = {
   login: (req, res) => {
     model.findOne({ email: req.body.email }, (err, user) => {
-      if (err) throw err;
+      if (err) {
+        res.status(500).send({ auth: false, msg: "Password is not correct" });
+      }
 
+      //Through an error is provided email doesn't exist in database
+      if (!user) {
+        res.send({ auth: false, msg: err });
+        return;
+      }
+      //Otherwise check if password matches existing on db
       user.comparePassword(req.body.password, (err, isMatch) => {
         if (err) throw err;
 
@@ -16,7 +24,7 @@ module.exports = {
           });
           res.status(200).send({ auth: true, token });
         } else {
-          res.status(500).send({ auth: false, msg: "Passwords did not match" });
+          res.send({ auth: false, msg: "Password is not correct" });
         }
       });
     });
@@ -34,14 +42,19 @@ module.exports = {
 
       .then(result => {
         console.log(result);
-        res
-          .status(200)
-          .send({ msg: "Register was Successful", user_id: result._id });
-        // .send({ msg: "Register was Successful", user_id: "id" });
+        let token = jwt.sign({ id: result._id }, config.secret, {
+          expiresIn: 86400
+        });
+        res.status(200).send({ auth: true, token });
       })
       .catch(err => {
+        if (err.code == 11000) {
+          alert("Email already exits");
+        } else {
+          alert("An internal error has occured");
+        }
         console.log(err);
-        res.status(500).send({ msg: "Register was Unsuccessful" });
+        res.send({ auth: false, msg: err });
       });
   }
 };
