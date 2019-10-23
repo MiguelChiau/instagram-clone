@@ -1,7 +1,14 @@
-# instagram-clone
-This is full stack Nodejs project.
+# Instagram-clone App
+
+This is a full-stack project that aims to explore the MEVN stack which consists of MongoDB, Express, Vue, and Node.js. The MEVN stack is a popular stack for building single page applications.
+
 
 Tech Stack:
-Vuejs - front-end framework
+
+Vuejs - frontend framework
+
+Nodejs - backend
+
 MongoDB - database
+
 Vuetify - material design component framework
