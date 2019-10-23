@@ -12,7 +12,7 @@
         <v-card-title></v-card-title>
         <v-card-text>
           <v-form>
-            <v-text-field prepend-icon="mdi-account-circle" label="Username"></v-text-field>
+            <v-text-field prepend-icon="mdi-email" label="Email"></v-text-field>
             <v-text-field
               :type="showPassword ? 'text': 'Password' "
               label="Password"
