@@ -28,5 +28,16 @@ export default {
 </script>
 
 <style lang="scss">
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+  font-family: "roboto", Arial, Helvetica, sans-serif;
+}
+#app {
+  width: 100vw;
+  height: 100%;
+  min-height: 100vh;
+}
 </style>
 
