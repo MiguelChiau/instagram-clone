@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
+import store from "../store";
 import Login from "../views/Login.vue";
 import Register from "../views/Register.vue";
 
@@ -38,6 +39,7 @@ let router = new VueRouter({
 // Check this before loading each page
 // redirect to login page before other pages (to protect the root)
 router.beforeEach((to, from, next) => {
+  store.commit("isAuthenticated");
   if (to.matched.some(record => record.meta.requireAuth)) {
     if (localStorage.getItem("jwt") == null) {
       next({

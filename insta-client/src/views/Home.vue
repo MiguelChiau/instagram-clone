@@ -2,12 +2,11 @@
 <template>
   <div>
     <v-app>
-      <h1>Wellcome to Instagram</h1>
-
       <v-card-actions>
-        <v-btn color="info" @click="logout">Logout</v-btn>
-
+        <h1>Instagram Feed</h1>
         <v-spacer></v-spacer>
+
+        <v-btn color="info" @click="logout">Logout</v-btn>
       </v-card-actions>
     </v-app>
   </div>

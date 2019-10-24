@@ -1,10 +1,6 @@
     
 <template>
   <div>
-    <!-- <div class="form-group">
-      <input type="text" v-model="email" />
-      <input type="password" v-model="password" />
-    </div>-->
     <v-app>
       <v-card width="400" class="mx-auto mt-10">
         <h1>Instagram-Clone</h1>
