@@ -4,6 +4,7 @@ import Home from "../views/Home.vue";
 import store from "../store";
 import Login from "../views/Login.vue";
 import Register from "../views/Register.vue";
+import Post from "../views/Post.vue";
 
 Vue.use(VueRouter);
 
@@ -29,6 +30,14 @@ let router = new VueRouter({
       path: "/",
       name: "home",
       component: Home,
+      meta: {
+        requireAuth: true
+      }
+    },
+    {
+      path: "/newPost",
+      name: "post",
+      component: Post,
       meta: {
         requireAuth: true
       }
