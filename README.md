@@ -21,7 +21,7 @@ npm install
 
 ### To Compile and run the back-end 
 ```
-npm run serve
+npm run dev
 ```
 
 ### To run the front-end
@@ -36,7 +36,7 @@ cd insta-client
 
 npm install
 
-npm run dev
+npm run serve
 
 Open browser and go to: http://localhost:8080/
 
