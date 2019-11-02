@@ -4,7 +4,7 @@
     <!-- For the video strem/camera on -->
     <section class="stream">
       <video ref="video" id="video" width="100%" height="300" autoplay v-if="!captured"></video>
-      <button @click="capture">Capture</button>
+      <button @click="capture" class="capture-btn">Capture</button>
     </section>
     <!-- For the captured image -->
     <section class="capture">
@@ -17,6 +17,7 @@
         :class="(captured) ? 'show' : 'hide' "
       ></canvas>
     </section>
+    <section class="image"></section>
   </main>
 </template>
 
@@ -26,7 +27,7 @@ export default {
     return {
       video: {},
       canvas: {},
-      captures: [],
+      cap: "",
       captured: false
     };
   },
@@ -73,5 +74,34 @@ export default {
 <style>
 h3 {
   margin-top: 80px;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.capture-btn {
+  position: absolute;
+  bottom: 180px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: aqua;
+  padding: 10px 10px;
+  /* border ra */
+}
+
+@media only screen and (min-width: 789px) {
+  #video {
+    width: 690px;
+    display: block;
+    margin: 0 auto;
+  }
+  .capture-btn {
+    bottom: 65px;
+  }
 }
 </style>

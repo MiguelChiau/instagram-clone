@@ -61,11 +61,22 @@ export default {
   display: flex;
   align-items: center;
   height: 30px;
+  text-align: center;
 }
 .post-picture {
-  width: 100%;
+  width: 600px;
+  margin: 0 auto;
+}
+@media only screen and (max-width: 600px) {
+  .post-picture {
+    width: 100%;
+  }
 }
 .post-image {
   width: 100%;
+}
+
+article {
+  text-align: center;
 }
 </style>
