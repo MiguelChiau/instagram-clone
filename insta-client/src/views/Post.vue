@@ -31,8 +31,17 @@
     <section :class="(captured) ? 'show' : 'hide'">
       <canvas ref="canvas" id="canvas" width="100%" height="300"></canvas>
       <div class="field-group">
-        <label for="desc">Description:</label>
-        <input type="text" id="desc" name="desc" class="input-field" v-model="desc" />
+        <!-- <label for="desc">Description:</label> -->
+        <!-- <input type="text" id="desc" name="desc" class="input-field" v-model="desc" /> -->
+        <!-- <v-divider></v-divider> -->
+        <v-textarea
+          solo
+          name="input-7-4"
+          label="Please write a description"
+          id="desc"
+          class="input-field"
+          v-model="desc"
+        ></v-textarea>
       </div>
     </section>
   </main>
@@ -136,7 +145,8 @@ export default {
 
 @media only screen and (min-width: 789px) {
   #video,
-  #canvas {
+  #canvas,
+  .field-group {
     width: 690px;
     display: block;
     margin: 0 auto;
@@ -158,5 +168,9 @@ export default {
 .upload-btn {
   display: block;
   margin: 0 auto;
+}
+
+.field-group {
+  margin-top: 30px;
 }
 </style>
